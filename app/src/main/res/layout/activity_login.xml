@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đăng Nhập"
+            android:text="Login to Your Account"
             android:textSize="26dp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
@@ -30,7 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="Tên đăng nhập"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:hint="User Name"
             android:inputType="text"
             tools:ignore="Autofill,MissingConstraints" />
             />
@@ -38,10 +39,12 @@
             android:id="@+id/ed_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="Mật khẩu"
+            android:layout_marginBottom="10dp"
+            android:hint="Password"
             android:inputType="textPassword"
-            tools:ignore="MissingConstraints"  />
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            tools:ignore="MissingConstraints" />
+
         <TextView
             android:id="@+id/tv_notification"
             android:layout_width="match_parent"
@@ -49,30 +52,41 @@
             android:text=""
             android:textColor="#F40707"
             tools:ignore="MissingConstraints" />
-            />
+
+        <CheckBox
+            android:id="@+id/remember_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remember me" />
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="#9ae1dd"
-            android:text="Đăng nhập"
+            android:background="#000000"
+            android:text="Sign In"
+            android:textColor="#FFFFFF"
             tools:ignore="MissingConstraints" />
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
+
+        <TextView
+            android:id="@+id/forgot_password_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Forgot my password ?"
+            android:layout_below="@id/remember_checkbox"
             android:layout_marginTop="10dp"
-            android:background="#81F174"
-            android:text="Đăng kí"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            />
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Hoặc đăng nhập với:" />
+            android:text="Or Login With" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,7 +103,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
-
             <View
                 android:id="@+id/facebook"
                 android:layout_width="50dp"
@@ -100,7 +113,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
         </LinearLayout>
-
+        <TextView
+            android:id="@+id/register_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have account Sign Up"
+            android:layout_below="@id/remember_checkbox"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
