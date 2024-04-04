@@ -38,16 +38,16 @@
             android:inputType="text"
             tools:ignore="Autofill,MissingConstraints" />
         />
-        <EditText
-            android:id="@+id/ed_rgFullName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:drawableLeft="@drawable/baseline_fullname_24"
-            android:hint=" Full Name"
-            android:inputType="text"
-            tools:ignore="Autofill,MissingConstraints" />
-        />
+<!--        <EditText-->
+<!--            android:id="@+id/ed_rgFullName"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:drawableLeft="@drawable/baseline_fullname_24"-->
+<!--            android:hint=" Full Name"-->
+<!--            android:inputType="text"-->
+<!--            tools:ignore="Autofill,MissingConstraints" />-->
+<!--        />-->
         <EditText
             android:id="@+id/ed_rgEmail"
             android:layout_width="match_parent"
