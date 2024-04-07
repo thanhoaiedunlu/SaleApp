@@ -1,8 +1,7 @@
 package com.example.saleapp.model;
 
 public class User {
-    private String id;
-    private String name;
+    private String userName;
     private String fullName;
     private String email;
     private String phoneNumber;
@@ -10,15 +9,13 @@ public class User {
     private String address;
     private String image;
     private String role;
-    private String typeAccount;
 
     public User() {
 
     }
 
-    public User(String id, String name, String fullName, String email, String phoneNumber, String passWord, String address, String image, String role, String typeAccount) {
-        this.id = id;
-        this.name = name;
+    public User(String userName, String fullName, String email, String phoneNumber, String passWord, String address, String image, String role) {
+        this.userName = userName;
         this.fullName = fullName;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -26,23 +23,14 @@ public class User {
         this.address = address;
         this.image = image;
         this.role = role;
-        this.typeAccount = typeAccount;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
-        return name;
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String userName) {
+        this.userName = userName;
     }
 
     public String getFullName() {
@@ -101,19 +89,10 @@ public class User {
         this.role = role;
     }
 
-    public String getTypeAccount() {
-        return typeAccount;
-    }
-
-    public void setTypeAccount(String typeAccount) {
-        this.typeAccount = typeAccount;
-    }
-
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "userName='" + userName + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
@@ -121,7 +100,6 @@ public class User {
                 ", address='" + address + '\'' +
                 ", image='" + image + '\'' +
                 ", role='" + role + '\'' +
-                ", typeAccount='" + typeAccount + '\'' +
                 '}';
     }
 }

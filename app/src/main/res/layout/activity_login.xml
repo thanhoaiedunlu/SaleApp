@@ -33,19 +33,19 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/ed_username"
+            android:id="@+id/ed_lgEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:drawableLeft="@drawable/baseline_person_24"
-            android:hint=" User Name"
+            android:hint="Email"
             android:inputType="text"
             tools:ignore="Autofill,MissingConstraints" />
         />
 
         <EditText
-            android:id="@+id/ed_password"
+            android:id="@+id/ed_lgpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
