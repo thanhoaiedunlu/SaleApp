@@ -132,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                                             Toast.LENGTH_SHORT).show();
                                                                     User user = new User(strUserName, strFullName, strEmail, strPhoneNumber, strPassWord, "", "", "2");
                                                                     String id = task.getResult().getUser().getUid();
-                                                                    database.getReference().child("Users").child(id).setValue(user);
+                                                                    database.getReference().child("users").child(id).setValue(user);
                                                                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                                                     startActivity(intent);
                                                                 } else {
