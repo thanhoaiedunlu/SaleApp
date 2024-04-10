@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +15,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText email, password;
-    private TextView txtRegister, notification;
+    private TextView txtRegister, notification, txtForgotPassword;
     private Button btnLogin;
    private FirebaseAuth auth;
     FirebaseDatabase database;
@@ -34,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         txtRegister = findViewById(R.id.register_text);
         btnLogin = findViewById(R.id.btn_login);
         notification = findViewById(R.id.tv_notification);
+        txtForgotPassword = findViewById(R.id.tv_forgotPassword);
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +48,15 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        txtForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void login(){
        String strEmail = email.getText().toString();
