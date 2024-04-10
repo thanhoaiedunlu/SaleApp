@@ -28,6 +28,7 @@ public class ForgotPassword extends AppCompatActivity {
     private TextView notification;
     private Button btnForgot;
     FirebaseAuth auth;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +38,18 @@ public class ForgotPassword extends AppCompatActivity {
         btnForgot = findViewById(R.id.btn_Sent);
         notification = findViewById(R.id.tv_fgnotification);
         auth = FirebaseAuth.getInstance();
+        progressBar = findViewById(R.id.processbar);
+        progressBar.setVisibility(View.GONE);
         btnForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ResetPassword();
+                resetPassword();
+                progressBar.setVisibility(View.VISIBLE);
             }
         });
     }
 
-    private void ResetPassword() {
+    private void resetPassword() {
             String strEmail =  email.getText().toString().trim();
         if (TextUtils.isEmpty(strEmail)){
             notification.setText("You have not entered an email");
@@ -60,6 +64,7 @@ public class ForgotPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     notification.setText("Sent success");
+                    progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(ForgotPassword.this, LoginActivity.class);
                     startActivity(intent);
                 }else

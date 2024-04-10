@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
    private FirebaseAuth auth;
     FirebaseDatabase database;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,12 +35,15 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         notification = findViewById(R.id.tv_notification);
         txtForgotPassword = findViewById(R.id.tv_forgotPassword);
+        progressBar = findViewById(R.id.processbar);
+        progressBar.setVisibility(View.GONE);
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 login();
+                progressBar.setVisibility(View.VISIBLE);
             }
         });
         txtRegister.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 notification.setText("Login success");
+                                progressBar.setVisibility(View.GONE);
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);
                             }else
