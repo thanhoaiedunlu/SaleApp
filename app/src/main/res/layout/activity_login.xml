@@ -31,28 +31,36 @@
             android:textSize="26dp"
             android:textStyle="bold"
             tools:ignore="MissingConstraints" />
+        <com.google.android.material.textfield.TextInputLayout
 
-        <EditText
-            android:id="@+id/ed_lgEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:drawableLeft="@drawable/baseline_person_24"
-            android:hint="Email"
-            android:inputType="text"
-            tools:ignore="Autofill,MissingConstraints" />
-        />
+            android:layout_marginTop="20dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_lgEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:hint="Email"
+                android:inputType="text"
+                tools:ignore="Autofill,MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/ed_lgpassword"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
-            android:hint=" Password"
-            android:inputType="textPassword"
-            tools:ignore="MissingConstraints" />
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_lgpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+                android:hint=" Password"
+                android:inputType="textPassword"
+                tools:ignore="MissingConstraints"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/tv_notification"
@@ -72,7 +80,7 @@
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="1dp"
             android:backgroundTint="@color/black"
             android:text="Sign In"
             android:textColor="#FFFFFF"
@@ -99,7 +107,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="1dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -130,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Don't have account Sign Up"
             />
         <TextView
